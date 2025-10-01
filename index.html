@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hamming Code Simulation</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="lib/divLOG.js"></script>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="input container">
+        <div class="input-info row">
+          <div class="span">
+            <label for="m_value">m</label>
+            <input type="number" id="m_value" readonly />
+          </div>
+          <div class="span">
+            <label for="input">Input Data</label>
+            <input type="number" oninput="inputs(event)" id="data" />
+          </div>
+          <div class="span">
+            <label for="r_value">r</label>
+            <input type="number" id="r_value" readonly />
+          </div>
+        </div>
+        <button onclick="generate()" id="generateButton">Generate Code</button>
+        <div class="divider"></div>
+        <label for="code">Payload</label>
+        <input type="text" name="code" id="code" readonly />
+        <button onclick="send()">Send</button>
+      </div>
+      <div class="console container">
+        <button onclick="DivLOG.clear()">Clear</button>
+        <ul id="console"></ul>
+      </div>
+      <div class="output container">
+        <label for="output">Output payload</label>
+        <input type="number" name="output" id="output" readonly />
+        <button onclick="decode()">Decode</button>
+        <button onclick="reset()">Reset</button>
+      </div>
+      <div></div>
+    </div>
+    <script src="hamming_code.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
