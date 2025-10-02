@@ -65,7 +65,7 @@ async function send() {
   DivLOG.log("Sending code to the receiver");
   await DivLOG.delayedLog(100, ..."Code : ", ...payloadInput.value);
 
-  generateButton.textContent = "Generate";
+  generateButton.textContent = "Generate Code";
   generateButton.disabled = false;
   dataInput.removeAttribute("readonly");
   let value = payloadInput.value;
@@ -94,6 +94,7 @@ async function send() {
   step = 0;
   o_step = 0;
   DivLOG.log("Code was sent");
+  decodeButton.textContent = "Decode";
 }
 async function decode() {
   let value = outputInput.value;
