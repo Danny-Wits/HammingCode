@@ -11,6 +11,36 @@
 
   <body>
     <div class="main">
+      <div class="controls">
+        <div class="control">
+          <label for="decimalInput">decimalInput</label>
+          <input
+            type="checkbox"
+            oninput="setDecimalInput(this.checked)"
+            id="decimalInput"
+            checked
+          />
+          <br />
+        </div>
+        <div class="control">
+          <label for="detailedLog">detailedLogs</label>
+          <input
+            type="checkbox"
+            oninput="DivLOG.setDetailedLog(this.checked)"
+            id="detailedLog"
+          />
+        </div>
+        <div class="control">
+          <label for="autoError">Auto Error</label>
+          <input
+            type="checkbox"
+            oninput="setAutoError(this.checked)"
+            id="autoError"
+            checked
+          />
+        </div>
+      </div>
+
       <div class="input container">
         <div class="input-info row">
           <div class="span">
@@ -29,7 +59,7 @@
         <button onclick="generate()" id="generateButton">Generate Code</button>
         <div class="divider"></div>
         <label for="code">Payload</label>
-        <input type="text" name="code" id="code" readonly />
+        <input type="text" name="code" id="code" />
         <button onclick="send()">Send</button>
       </div>
       <div class="console container">
@@ -37,12 +67,37 @@
         <ul id="console"></ul>
       </div>
       <div class="output container">
-        <label for="output">Output payload</label>
-        <input type="number" name="output" id="output" readonly />
-        <button onclick="decode()">Decode</button>
+        <div class="input-info row">
+          <div class="span">
+            <label for="o_m_value">m</label>
+            <input type="number" id="o_m_value" readonly />
+          </div>
+          <div class="span">
+            <label for="o_input">Output Data</label>
+            <input type="number" oninput="inputs(event)" id="o_data" />
+          </div>
+          <div class="span">
+            <label for="o_r_value">r</label>
+            <input type="number" id="o_r_value" readonly />
+          </div>
+        </div>
+
+        <button onclick="decode()" id="decodeButton">Decode</button>
         <button onclick="reset()">Reset</button>
+        <div class="credits">
+          <p>
+            <a
+              target="_blank"
+              href="https://github.com/Danny-Wits/HammingCode.git"
+              >Github</a
+            ><br />
+            Created by
+            <a target="_blank" href="https://github.com/Danny-Wits"
+              >Danny-Wits</a
+            >
+          </p>
+        </div>
       </div>
-      <div></div>
     </div>
     <script src="hamming_code.js"></script>
     <script src="script.js"></script>
