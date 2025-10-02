@@ -147,10 +147,14 @@ input:focus {
     }
   }
 }
+.dividerSmall {
+  height: 5px;
+}
 .credits {
   margin-top: auto;
   text-align: right;
   align-self: flex-end;
+  padding-bottom: 10px;
 }
 @media (max-width: 600px) {
   .controls {

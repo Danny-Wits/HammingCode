@@ -122,7 +122,7 @@ async function checkParities(value, r) {
     DivLOG.log("Error string is : ", error_string);
     const index = parseInt(error_string, 2);
     DivLOG.log("Error index is : ", index);
-    DivLOG.log("Fixing error  ");
+    await DivLOG.delayedLog(50, ..."Fixing_error...");
     value = replaceAtIndex(
       value,
       length - index,
