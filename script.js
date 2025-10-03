@@ -127,7 +127,7 @@ async function decode() {
   } else if (o_step == 3) {
     DivLOG.delayedLog(200, "Getting Data", ".", ".", ".");
     let data = await getData(value, getValue("o_r_value"));
-    DivLOG.log("Data : ", data);
+    await DivLOG.delayedLog("Data : ", ...data);
     setValue("o_data", is_decimal_input ? parseInt(data, 2) : data);
     decodeButton.textContent = "Done(Send more to continue)";
   } else {
